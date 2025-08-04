@@ -1,2 +1,19 @@
-node_modules
+# Node.js
+node_modules/
+
+# Build TypeScript
+dist/
+
+# Environment variables
 .env
+
+# IDEs
+.vscode/
+*.log
+
+# ts-node-dev temporary files
+*.tsbuildinfo
+
+# macOS / Linux / Windows system files
+.DS_Store
+Thumbs.db
