@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* Diretórios do projeto */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* Ambiente */
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["esnext"],
+    "types": ["node"],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Outras saídas */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Verificações mais seguras */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* Organização e segurança */
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
