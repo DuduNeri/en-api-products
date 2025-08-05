@@ -6,4 +6,4 @@ export interface IProductAtributes {
   price: number;
   createdAt?: Date;
   updatedAt?: Date;
-}
+};

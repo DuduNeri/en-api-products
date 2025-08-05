@@ -1,3 +1,4 @@
+import { error } from 'console';
 import Product from '../models/productModel';
 import { IProductAtributes } from '../types/productTypes';
 
@@ -7,7 +8,7 @@ export class ProductService {
       if (!data.name || !data.title || !data.description || !data.price) {
         console.log("Preencha todos os campos")
         throw new Error("Preencha todos os campos")
-      }
+      };
       const create = await Product.create({
         name: data.name,
         title: data.title,
@@ -16,10 +17,10 @@ export class ProductService {
       });
       return create.toJSON() satisfies IProductAtributes;
     } catch (error) {
-      console.log("erro detalhado:", error)
+      console.log("erro detalhado:", error);
       throw new Error;
     }
-  }
+  };
 
   async getProductById(id: string): Promise<IProductAtributes> {
     try {
@@ -36,16 +37,31 @@ export class ProductService {
     } catch (error: any) {
       console.log("Erro detalhado:", error.message || error);
       throw new Error(error.message || "Erro ao buscar produto");
-    }
-  }
+    };
+  };
 
   async getAllProducts(): Promise<IProductAtributes[]> {
     try {
       const products = await Product.findAll();
       return products.map((product) => product.toJSON());
     } catch (error) {
-      console.log("erro detalhado:", error)
+      console.log("erro detalhado:", error);
       throw new Error;
-    }
-  }
-}
+    };
+  };
+
+  async deleteProduct(id: string) {
+    try {
+      const dell = await Product.destroy({ where: { id } });
+
+      if(dell === 0 ){
+       return error("Produto não encontrado");
+      };
+
+      return dell;
+    } catch (error) {
+      console.log("erro detalhado:", error);
+      throw new Error;
+    };
+  };
+};

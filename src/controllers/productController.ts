@@ -15,4 +15,8 @@ export class ProductController {
     return new ProductService().getAllProducts();
  }
 
+ async deleteProduct(id: string){
+  return new ProductService().deleteProduct(id);
+ }
+
 }
