@@ -1,5 +1,5 @@
 ## en-api-products
-##Tecnologias utilizadas:
+## Tecnologias utilizadas:
 Typescript + NodeJs
-##Banco de dados: 
+## Banco de dados: 
 PostgreSQL + sequlize
